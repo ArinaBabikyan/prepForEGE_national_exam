@@ -370,14 +370,18 @@ while i * 2 <= n:
 #                 counts[i[2] - 1] += 1
 #     print(expired)
 #     print(max(counts))
-
-with open("7.txt") as line:
-    arr = list(map(int, line.readlines()))
-    count = []
-    for i in range(len(arr)-2):
-        for j in range(i, len(arr)-1):
-            for k in range(j, len(arr)):
-                res = (arr[i], arr[j], arr[k])
-                if sum(res) % 105 == 0:
-                    count.append(sum(res))
-    print(max(count))
+#
+# with open("7.txt") as line:
+#     arr = list(map(int, line.readlines()))
+#     count = []
+#     for i in range(len(arr)-2):
+#         for j in range(i, len(arr)-1):
+#             for k in range(j, len(arr)):
+#                 res = (arr[i], arr[j], arr[k])
+#                 if sum(res) % 105 == 0:
+#                     count.append(sum(res))
+#     print(max(count))
+n = 1
+print(12 * 2 ** 23 / (2 * 195*6))
+print(32000* 4*32*120 / (2 ** 23))
+print((25 * 2 ** 23 - 40 * 2 ** 13 ) / 0.75 / (2 * 50000 * 16) / 60)
