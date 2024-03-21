@@ -61,3 +61,6 @@
 #     if sum(list(map(int, list(s)))) == 17:
 #         print(n)
 #         break #26
+for x in '0123456789ABCDE':
+    if (int(f'97968{x}15', 15) + int(f'7{x}233', 15)) % 14 == 0:
+        print((int(f'97968{x}15', 15) + int(f'7{x}233', 15)) // 14)
