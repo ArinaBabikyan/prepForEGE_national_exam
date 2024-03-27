@@ -63,4 +63,17 @@
 #         break #26
 for x in '0123456789ABCDE':
     if (int(f'97968{x}15', 15) + int(f'7{x}233', 15)) % 14 == 0:
-        print((int(f'97968{x}15', 15) + int(f'7{x}233', 15)) // 14)
+        print\
+            ((int(f'97968{x}15', 15) + int(f'7{x}233', 15)) // 14)
+print(84141906/(2 ** 20))
+with open('но3') as f:
+    li = [i.strip() for i in f.readlines()]
+    di = {}
+    for i in li:
+        if i not in di.keys():
+            di[i] = li.count(i)
+    print(di)
+    su = 0
+    for a, b in di.items():
+        su += b
+    print(su)

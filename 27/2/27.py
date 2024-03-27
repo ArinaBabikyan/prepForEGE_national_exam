@@ -39,7 +39,7 @@
 #                 res = max(res, (li[i] + li[j]))
 #     print(res) #9989
 # B
-# with open('27.2-B.txt') as f:
+# with open('27.1-B.txt') as f:
 #     li = [int(i) for i in f.readlines()]
 #     k = li.pop(0)
 #     n = li.pop(0)
