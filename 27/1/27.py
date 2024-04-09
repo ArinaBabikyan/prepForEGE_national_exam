@@ -99,7 +99,7 @@
 #                         par = (li[i], li[j])
 #                     res += 1
 #     print(ma, par, res)
-# with open('27.4-B') as f:
+# with open('27.3-B') as f:
 #     li = [int(i) for i in f.readlines()]
 #     n = li.pop(0)
 #     k = li.pop(0)

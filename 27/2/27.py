@@ -86,25 +86,42 @@
 # 4
 from itertools import combinations
 
-with open('27.4-A.txt') as f:
+# with open('27.4-A.txt') as f:
+#     li = [int(i) for i in f.readlines()]
+#     n = li.pop(0)
+#     ma = 0
+#     for a in range(1, n + 1):
+#         for i in combinations(li, a):
+#             if sum(i) % 25 == 0:
+#                 ma = max(sum(i), ma)
+#     print(ma) # 351
+# f = open('27.3-B')
+# a = [int(i) for i in f.readlines()]
+# n = a.pop(0)
+# m = 25
+# sumi = [0] * m
+# for x in a:
+#     old = sumi[:]
+#     for s in old:
+#         if s > 0:
+#             new_s = s + x
+#             sumi [new_s % m] = max (sumi[new_s % m], new_s)
+#     sumi[x % m] = max (sumi[x % m], x)
+# print(sumi[0])
+
+
+
+# 58 reshu-ege
+with open('27-A.txt') as f:
+    k = int(f.readline())
+    n = int(f.readline())
     li = [int(i) for i in f.readlines()]
-    n = li.pop(0)
-    ma = 0
-    for a in range(1, n + 1):
-        for i in combinations(li, a):
-            if sum(i) % 25 == 0:
-                ma = max(sum(i), ma)
-    print(ma) # 351
-f = open('27.4-B')
-a = [int(i) for i in f.readlines()]
-n = a.pop(0)
-m = 25
-sumi = [0] * m
-for x in a:
-    old = sumi[:]
-    for s in old:
-        if s > 0:
-            new_s = s + x
-            sumi [new_s % m] = max (sumi[new_s % m], new_s)
-    sumi[x % m] = max (sumi[x % m], x)
-print(sumi[0])
+    su1 = []
+    su_max_left = 0
+    max_left = 0
+    su_max_left3 = 0
+    for i in range(2 * k, n - k):
+        max_left = max(max_left, li[i - 4 * k])
+        su_max_left = max(li[i - 2 * k] + max_left, su_max_left)
+        su_max_left3 = max(su_max_left3, su_max_left)
+    print(su_max_left3)

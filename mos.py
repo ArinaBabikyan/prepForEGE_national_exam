@@ -130,65 +130,65 @@ for i in sequence:
 #             di = {'a': '1'}
 #     cnt += 1
 # print(di)
-def func(letter):
-    cnt = 2
-    li2 = []
-    while cnt < 30:
-        if encoded_sequence.count(encoded_sequence[0:cnt]) >= freq[letter]:
-            li2.append(encoded_sequence[0:cnt])
-        cnt += 1
-    return li2
-
-
-# ищем i
-print(freq['i'])
-print('i * 2')
-li1 = []
-li = func('i')
-for i in li:
-    if encoded_sequence.count(i + i) >= 5:
-        li1.append(i)
-print(li[::-1])
-print('sequence')
-# i = 000000001000
-i = '000000001'
-encoded_sequence = (encoded_sequence[len('000000001'):])
-print('sequence after i')
-print(encoded_sequence)
-print('e', func('e'))
-# e = 00001
-e = '00001'
-encoded_sequence = encoded_sequence[len('00001') * 2:]
-print(encoded_sequence)
-# c = 001
-print('c', func('c'))
-c = '001'
-encoded_sequence = encoded_sequence[len('001') * 2 + 1:]
-print('encoded after ieecca')
-print(encoded_sequence)
-print('f', func('f'))
-# let f = 0000010000
-f = '000001'
-# f+g = 0000010000000001
-encoded_sequence = encoded_sequence[len('0000010'):]
-print(encoded_sequence)
-print('j', func('j'))
-#let j = 000001
-j = '0000000001'
-encoded_sequence = encoded_sequence[len('000001') + len('000000001'):]
-print(encoded_sequence)
-# let d = '0001'
-d = '0001'
-encoded_sequence = encoded_sequence[len('0001') + 1 + 2 * len(c) + len(j) + 1 + len(j) + len(f):]
-# теперь строка начинается с: hejd
-print(e, j, d)
-print(encoded_sequence)
-a = '1'
-s = (i+e+e+c+c+a+f+j+i+d+a+c+c+j+a+j + f)
-print(d, i)
-print('h', func("h"))
-h = '00100000001'
-print(i+e+e+c+c+a+f+j+i+d+a+c+c+j+a+j + f + h + e + j + d + e)
+# def func(letter):
+#     cnt = 2
+#     li2 = []
+#     while cnt < 30:
+#         if encoded_sequence.count(encoded_sequence[0:cnt]) >= freq[letter]:
+#             li2.append(encoded_sequence[0:cnt])
+#         cnt += 1
+#     return li2
+#
+#
+# # ищем i
+# print(freq['i'])
+# print('i * 2')
+# li1 = []
+# li = func('i')
+# for i in li:
+#     if encoded_sequence.count(i + i) >= 5:
+#         li1.append(i)
+# print(li[::-1])
+# print('sequence')
+# # i = 000000001000
+# i = '000000001'
+# encoded_sequence = (encoded_sequence[len('000000001'):])
+# print('sequence after i')
+# print(encoded_sequence)
+# print('e', func('e'))
+# # e = 00001
+# e = '00001'
+# encoded_sequence = encoded_sequence[len('00001') * 2:]
+# print(encoded_sequence)
+# # c = 001
+# print('c', func('c'))
+# c = '001'
+# encoded_sequence = encoded_sequence[len('001') * 2 + 1:]
+# print('encoded after ieecca')
+# print(encoded_sequence)
+# print('f', func('f'))
+# # let f = 0000010000
+# f = '000001'
+# # f+g = 0000010000000001
+# encoded_sequence = encoded_sequence[len('0000010'):]
+# print(encoded_sequence)
+# print('j', func('j'))
+# #let j = 000001
+# j = '0000000001'
+# encoded_sequence = encoded_sequence[len('000001') + len('000000001'):]
+# print(encoded_sequence)
+# # let d = '0001'
+# d = '0001'
+# encoded_sequence = encoded_sequence[len('0001') + 1 + 2 * len(c) + len(j) + 1 + len(j) + len(f):]
+# # теперь строка начинается с: hejd
+# print(e, j, d)
+# print(encoded_sequence)
+# a = '1'
+# s = (i+e+e+c+c+a+f+j+i+d+a+c+c+j+a+j + f)
+# print(d, i)
+# print('h', func("h"))
+# h = '00100000001'
+# print(i+e+e+c+c+a+f+j+i+d+a+c+c+j+a+j + f + h + e + j + d + e)
 # + g + b + a + f)
 #let d = 00010001100100100000000011000000000
 # encoded_sequence = encoded_sequence[len('00010001100100100000000011000000000') + len('1000001'):]
@@ -196,3 +196,17 @@ print(i+e+e+c+c+a+f+j+i+d+a+c+c+j+a+j + f + h + e + j + d + e)
 # sequence = "hello"
 # encoded_sequence = "1011000111"
 # print(fano_coding(sequence))
+
+
+def F(n):
+    if n == 0:
+        return 0
+    if n % 2:
+        return 1 + F(n - 1)
+    return F(n / 2)
+
+cnt = 0
+for i in range(1, 501):
+    if (F(i)) == 8:
+        cnt += 1
+print(cnt)
